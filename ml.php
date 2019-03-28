@@ -264,7 +264,7 @@ $ver = ver("$d");
 		}
 	}
 	
-	echo '@RiyanCoday - 2k19';		    echo "\r\n"; echo "========";echo "\r\n";sleep(10);
+	echo '@RiyanCoday - 2k19';		    echo "\r\n"; echo "========";echo "\r\n";sleep(8);
 
 }
 $i++;
