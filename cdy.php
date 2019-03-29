@@ -87,7 +87,7 @@ return $s;
 }
 function reg($e,$r){
 $ch = curl_init();
-$data = '{"password":"AsuuuuKon59$","monetize":true,"email":"'.$e.'","referral_id":"'.$r.'"}';
+$data = '{"password":"AsuuuuTKon59$","monetize":true,"email":"'.$e.'","referral_id":"'.$r.'"}';
 curl_setopt($ch, CURLOPT_URL, 'https://api.bigtoken.com/signup');
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
