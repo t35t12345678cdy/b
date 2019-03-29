@@ -250,7 +250,7 @@ $ver = ver("$d");
 
 	} else	if (stripos($ver, 'Too Many Attempts.')) {
 		$ver2 = ver($d);
-		if (stripos($ver, 'Reward successfully made')) {
+		if (stripos($ver2, 'Reward successfully made')) {
 		echo ''.$i.' / Sukses Reff [2] -> '.$file[$x];
 		    echo "<br>";
 		}else{
