@@ -186,10 +186,10 @@ $e = getStr($cr,'"email_address":"','","email_id":');
 if(isset($email_id)){
 			echo 'Email '.$e;
 		    echo "\r\n";
-$result = reg($e,$r);	
-if (stripos($result, 'Too Many Attempts.')) {
+$result3 = reg($e,$r);	
+if (stripos($result3, 'Too Many Attempts.')) {
 			echo 'Daftar Ulang.';
-		    echo "\r\n";
+		    echo "\r\n";continue;
 $result = reg($e);	
 if (stripos($result, 'The email has already been taken.')) {
 		echo 'Email Sudah Terdaftar';
