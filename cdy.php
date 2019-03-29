@@ -87,7 +87,7 @@ return $s;
 }
 function reg($e,$r){
 $ch = curl_init();
-$data = '{"password":"AsuuuuTKon59$","monetize":true,"email":"'.$e.'","referral_id":"'.$r.'"}';
+$data = '{"password":"AsuuuuKon59$","monetize":true,"email":"'.$e.'","referral_id":"'.$r.'"}';
 curl_setopt($ch, CURLOPT_URL, 'https://api.bigtoken.com/signup');
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
@@ -186,11 +186,11 @@ $e = getStr($cr,'"email_address":"','","email_id":');
 if(isset($email_id)){
 			echo 'Email '.$e;
 		    echo "\r\n";
-$result3 = reg($e,$r);	
-if (stripos($result3, 'Too Many Attempts.')) {
+$result = reg($e,$r);	
+if (stripos($result, 'Too Many Attempts.')) {
 			echo 'Daftar Ulang.';
-		    echo "\r\n";continue;
-$result = reg($e);	
+		    echo "\r\n";
+$result = reg($e,$r);	
 if (stripos($result, 'The email has already been taken.')) {
 		echo 'Email Sudah Terdaftar';
 		    echo "\r\n";
@@ -249,8 +249,8 @@ $ver = ver("$d");
 		    echo "\r\n";
 
 	} else	if (stripos($ver, 'Too Many Attempts.')) {
-		$ver2 = ver($d);
-		if (stripos($ver2, 'Reward successfully made')) {
+		$ver3 = ver($d);
+		if (stripos($ver3, 'Reward successfully made')) {
 		echo ''.$i.' / Sukses Reff [2] -> '.$file[$x];
 		    echo "<br>";
 		}else{
