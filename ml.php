@@ -85,9 +85,9 @@ function xxx(){
 $s = substr(str_shuffle("abcdefghijklmnopqrstuvwxyz1234567890"), -8);
 return $s;
 }
-function reg($e){
+function reg($e,$r){
 $ch = curl_init();
-$data = '{"password":"Bangsat98$","monetize":true,"email":"'.$e.'","referral_id":"TNTSHNT"}';
+$data = '{"password":"AsuuuuKon59$","monetize":true,"email":"'.$e.'","referral_id":"'.$r.'"}';
 curl_setopt($ch, CURLOPT_URL, 'https://api.bigtoken.com/signup');
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
@@ -170,6 +170,8 @@ function getStr($content,$start,$end){
     }
     return '';
 }
+echo 'Masukkan Ref : '; 
+$r = trim(fgets(STDIN)); 
 echo 'Masukkan Jumlah : '; 
 $jumlah = trim(fgets(STDIN)); 
 $i=1;
@@ -184,7 +186,7 @@ $e = getStr($cr,'"email_address":"','","email_id":');
 if(isset($email_id)){
 			echo 'Email '.$e;
 		    echo "\r\n";
-$result = reg($e);	
+$result = reg($e,$r);	
 if (stripos($result, 'Too Many Attempts.')) {
 			echo 'Daftar Ulang.';
 		    echo "\r\n";
@@ -208,7 +210,6 @@ if (stripos($result, 'The email has already been taken.')) {
 		    echo "\r\n";
 		sleep(10);
 	}else{
-		echo $result;
 			echo "Gagal Daftar";
     continue;	}
 		$res = cek_em($e,$email_id);
@@ -247,16 +248,29 @@ $ver = ver("$d");
 		echo 'Sukses Verif';
 		    echo "\r\n";
 
-	} else{
+	} else	if (stripos($ver, 'Too Many Attempts.')) {
+		$ver2 = ver($d);
+		if (stripos($ver, 'Reward successfully made')) {
+		echo ''.$i.' / Sukses Reff [2] -> '.$file[$x];
+		    echo "<br>";
+		}else{
+					echo '[2]Gagal Verif Buka Link Manual Saja https://bigtoken.page.link/'.$code.'';
+		    echo "\r\n";
+				$data =  "https://bigtoken.page.link/".$code." \r\n";
+		$fh = fopen("bt.txt", "a");
+		fwrite($fh, $data);
+		fclose($fh);
+		}
+		}else{
 		$ver2 = ver("$d");
 	if (stripos($ver2, 'Reward successfully made')) {
-		echo 'Sukses Verif [2]';
+		echo 'Sukses Verif [3]';
 		    echo "\r\n";
 	}else{
 		echo 'Gagal Verif Buka Link Manual Saja https://bigtoken.page.link/'.$code.'';
 		    echo "\r\n";
 				$data =  "https://bigtoken.page.link/".$code." \r\n";
-		$fh = fopen("BT.txt", "a");
+		$fh = fopen("bt.txt", "a");
 		fwrite($fh, $data);
 		fclose($fh);
 	}
@@ -264,7 +278,7 @@ $ver = ver("$d");
 		}
 	}
 	
-	echo '@RiyanCoday - 2k19';		    echo "\r\n"; echo "========";echo "\r\n";sleep(8);
+	echo '@RiyanCoday - 2k19';		    echo "\r\n"; echo "========";echo "\r\n";
 
 }
 $i++;
