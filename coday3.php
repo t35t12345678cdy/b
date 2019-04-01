@@ -18,10 +18,11 @@ curl_setopt($ch, CURLOPT_POST, 1);
 $headers = array();
 $headers[] = 'Origin: https://tempmail.io';
 $headers[] = 'Accept-Language: en-US,en;q=0.9';
+$headers[] = 'User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:66.0) Gecko/20100101 Firefox/66.0';
 $headers[] = 'Accept: application/json, text/plain, */*';
 $headers[] = 'Referer: https://tempmail.io/';
 $headers[] = 'Authority: tempmail.io';
-$headers[] = 'Cookie: __cfduid=d5a29b61e2e9708cd957c8db571b482411554069405; _ga=GA1.2.1389845296.1554069410; _gid=GA1.2.1770074775.1554069410; PHPSESSID=37fed1dd298e4baed96de3ed3a45522f';
+$headers[] = 'Cookie: __cfduid=dc90075f1e65e68984ee231bb0f50308b1554161801; PHPSESSID=01c5ad639ba6b62af5c56dc0ee45b37e; _ga=GA1.2.2130136459.1554161801; _gid=GA1.2.507269194.1554161801; _gat=1';
 curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 
 return curl_exec($ch);
