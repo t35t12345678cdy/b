@@ -165,7 +165,7 @@ $i=1;
 while($i <= $jumlah){
 			echo "========";echo "\r\n";
 $cr = cr(8);
-	$email = "rgdrdx8xlj@1secmail.net";	
+	$email = getStr($cr,'true,"data":"','"');	
 	echo '['.$i.'/'.$jumlah.'] Email '.$email; 		    echo "\r\n";
 $register_bt = reg($email,$ref);
 if (stripos($register_bt, 'Too Many Attempts.')) {
