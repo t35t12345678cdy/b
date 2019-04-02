@@ -1,7 +1,7 @@
 <?php
 error_reporting(0);
 /* bigtoken bot regis by @RiyanCoday  */
-/* mpp di encode codingannya ngasal gan -/\- */
+/* v1 buruk bet dah codingan sampah ini */
 function create($e){
 	$ch = curl_init();
 
@@ -80,7 +80,7 @@ if (curl_errno($ch)) {
 curl_close ($ch);
 }
 function xxx(){
-$s = substr(str_shuffle("abcdefghijklmnopqrstuvwxyz1234567890"), -10);
+$s = substr(str_shuffle("abcdefghijklmnopqrstuvwxyz1234567890"), -13);
 return $s;
 }
 function reg($e,$r){
@@ -250,6 +250,9 @@ $ver = ver("$d");
 		echo 'Sukses Verif';
 		    echo "\r\n";
 
+	}elseif (stripos($ver, 'disable MSIE')) {
+		echo 'Akurasa Sukses Verif [1] ';
+		    echo "\r\n";
 	} else	if (stripos($ver, 'Too Many Attempts.')) {
 			$ss = getStr($ver,'Retry-After: ','
 X-RateLimit-Reset:');
@@ -260,7 +263,10 @@ $shn = $ss+1;		echo 'Verif Ulang';
 		if (stripos($ver3, 'Reward successfully made')) {
 		echo 'Sukses Verif ';
 		    echo "\r\n";
-		}else{
+		}elseif (stripos($ver3, 'disable MSIE')) {
+		echo 'Akurasa Sukses Verif [2] ';
+		    echo "\r\n";
+	}else{
 					echo '['.$shn.']Gagal Verif Buka Link Manual Saja https://bigtoken.page.link/'.$code.'';
 		    echo "\r\n";
 				$data =  "https://bigtoken.page.link/".$code." \r\n";
@@ -272,6 +278,9 @@ $shn = $ss+1;		echo 'Verif Ulang';
 		$ver2 = ver("$d");
 	if (stripos($ver2, 'Reward successfully made')) {
 		echo 'Sukses Verif [3]';
+		    echo "\r\n";
+	}elseif (stripos($ver2, 'disable MSIE')) {
+		echo 'Akurasa Sukses Verif [3] ';
 		    echo "\r\n";
 	}else{
 		echo 'Gagal Verif Buka Link Manual Saja https://bigtoken.page.link/'.$code.'';
