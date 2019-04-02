@@ -131,7 +131,7 @@ function getStr($content,$start,$end){
     }
     return '';
 }
-echo '@RiyanCoday - 2k19';		    echo "\r\n"; echo "========";echo "\r\n";
+echo '@RiyanCoday - 2k19 v.4';		    echo "\r\n"; echo "========";echo "\r\n";
 echo 'Kode Referral ? : '; 
 $ref = trim(fgets(STDIN)); 
 echo 'Mau Berapa ? : '; 
@@ -173,8 +173,11 @@ Content-Secur');
 $cod = getStr($getver,'https://my.bigtoken.com/verify?code=','&type');
 $d = '{"email":"'.$em.'","verification_code":"'.$cod.'"}';
 $ver = ver("$d");
-if (stripos($ver, 'Reward successfully made')) {
+if (stripos($ver, 'Reward')) {
 		echo '['.$i.'/'.$jumlah.'] Sukses Verif '.$em.'';
+		    echo "\r\n";
+	}elseif (stripos($ver, 'disable MSIE')) {
+				echo '['.$i.'/'.$jumlah.'] Aku Yakin Sukses Verif '.$em.'';
 		    echo "\r\n";
 	}elseif(stripos($ver, 'Too Many Attempts.')) {
 					echo '['.$i.'/'.$jumlah.'] Gagal Verif [Too Many Attempts.]';
@@ -186,10 +189,13 @@ $shn = $ss+1;
 					sleep($shn);
 		    echo "\r\n";	
 			$ver1 = ver("$d");
-if (stripos($ver1, 'Reward successfully made')) {
+if (stripos($ver1, 'Reward')) {
 			echo '['.$i.'/'.$jumlah.'] Sukses Verif[2] '.$em.'';
 		    echo "\r\n";
-}else{
+}elseif (stripos($ver1, 'disable MSIE')) {
+				echo '['.$i.'/'.$jumlah.'] Aku Yakin Sukses Verif '.$em.'';
+		    echo "\r\n";
+	}else{
 								echo '['.$i.'/'.$jumlah.'] Gagal Verif Lagi Cek Manual di cdy.txt';		    echo "\r\n";
 
 				$data =  "".$link." \r\n";
