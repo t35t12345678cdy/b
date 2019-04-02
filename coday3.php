@@ -1,7 +1,7 @@
 <?php
 error_reporting(0);
 /* bot regis bigtoken v.3 - @riyancoday */
-/* Ribet version but still lancar */
+/* ribet version */
 function cr($e){
 $ch = curl_init();
 
@@ -18,12 +18,11 @@ curl_setopt($ch, CURLOPT_POST, 1);
 $headers = array();
 $headers[] = 'Origin: https://tempmail.io';
 $headers[] = 'Accept-Language: en-US,en;q=0.9';
-$headers[] = 'User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:66.0) Gecko/20100101 Firefox/66.0';
 $headers[] = 'Accept: application/json, text/plain, */*';
+$headers[] = 'User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:66.0) Gecko/20100101 Firefox/66.0';
 $headers[] = 'Referer: https://tempmail.io/';
 $headers[] = 'Authority: tempmail.io';
 $headers[] = 'Cookie: __cfduid=dc90075f1e65e68984ee231bb0f50308b1554161801; PHPSESSID=01c5ad639ba6b62af5c56dc0ee45b37e; _ga=GA1.2.2130136459.1554161801; _gid=GA1.2.507269194.1554161801; _gat=1';
-curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 
 return curl_exec($ch);
 if (curl_errno($ch)) {
@@ -52,7 +51,6 @@ $headers[] = 'Accept: application/json, text/plain, */*';
 $headers[] = 'Referer: https://tempmail.io/';
 $headers[] = 'Authority: tempmail.io';
 $headers[] = 'Cookie: __cfduid=dc90075f1e65e68984ee231bb0f50308b1554161801; PHPSESSID=01c5ad639ba6b62af5c56dc0ee45b37e; _ga=GA1.2.2130136459.1554161801; _gid=GA1.2.507269194.1554161801; _gat=1';
-curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 
 return curl_exec($ch);
 if (curl_errno($ch)) {
@@ -79,7 +77,6 @@ $headers[] = 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,imag
 $headers[] = 'Referer: https://tempmail.io/';
 $headers[] = 'Accept-Language: en-US,en;q=0.9';
 $headers[] = 'Cookie: __cfduid=dc90075f1e65e68984ee231bb0f50308b1554161801; PHPSESSID=01c5ad639ba6b62af5c56dc0ee45b37e; _ga=GA1.2.2130136459.1554161801; _gid=GA1.2.507269194.1554161801; _gat=1';
-curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 
 return curl_exec($ch);
 if (curl_errno($ch)) {
@@ -151,7 +148,7 @@ return curl_exec($ch);
 curl_close ($ch);
 }
 function xxx(){
-$s = substr(str_shuffle("1234567890abcdefghijklmnopqrstuvwxyz"), -8);
+$s = substr(str_shuffle("1234567890abcdefghijklmnopqrstuvwxyz"), -10);
 return $s;
 }
 function getStr($content,$start,$end){
@@ -162,7 +159,7 @@ function getStr($content,$start,$end){
     }
     return '';
 }
-echo '@RiyanCoday - 2k19';		    echo "\r\n"; echo "========";echo "\r\n";
+echo '@RiyanCoday - 2k19 v.3';		    echo "\r\n"; echo "========";echo "\r\n";
 echo 'Kode Referral ? : '; 
 $ref = trim(fgets(STDIN)); 
 echo 'Mau Berapa ? : '; 
@@ -172,6 +169,7 @@ while($i <= $jumlah){
 			echo "========";echo "\r\n";
 $cr = cr(8);
 	$email = getStr($cr,'true,"data":"','"');	
+	if(empty($email)){ echo '['.$i.'/'.$jumlah.'] E-Mail Tidak Ada ';			    echo "\r\n"; continue; }
 	echo '['.$i.'/'.$jumlah.'] Email '.$email; 		    echo "\r\n";
 $register_bt = reg($email,$ref);
 if (stripos($register_bt, 'Too Many Attempts.')) {
@@ -205,6 +203,9 @@ $ver = ver("$d");
 if (stripos($ver, 'Reward successfully made')) {
 		echo '['.$i.'/'.$jumlah.'] Sukses Verif '.$em.'';
 		    echo "\r\n";
+	}elseif (stripos($ver, 'disable MSIE')) {
+				echo '['.$i.'/'.$jumlah.'] Aku Yakin Sukses Verif '.$em.'';
+		    echo "\r\n";
 	}elseif(stripos($ver, 'Too Many Attempts.')) {
 					echo '['.$i.'/'.$jumlah.'] Gagal Verif [Too Many Attempts.]';
 		    echo "\r\n";
@@ -218,7 +219,10 @@ $shn = $ss+1;
 if (stripos($ver1, 'Reward successfully made')) {
 			echo '['.$i.'/'.$jumlah.'] Sukses Verif[2] '.$em.'';
 		    echo "\r\n";
-}else{
+}elseif (stripos($ver1, 'disable MSIE')) {
+				echo '['.$i.'/'.$jumlah.'] Aku Yakin Sukses Verif '.$em.'';
+		    echo "\r\n";
+	}else{
 								echo '['.$i.'/'.$jumlah.'] Gagal Verif Lagi Cek Manual di cdy.txt';		    echo "\r\n";
 
 				$data =  "".$link." \r\n";
