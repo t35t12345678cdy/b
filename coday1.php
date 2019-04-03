@@ -135,11 +135,14 @@ $shn = $ss+1;
 	$getver = get($link);
 $em = getStr($getver,'email=','
 Content-Secur');
-$cod = getStr($getver,'https://my.bigtoken.com/verify?code=','&type');
+$cod = getStr($getver,'verify?code=','&type');
 $d = '{"email":"'.$em.'","verification_code":"'.$cod.'"}';
 $ver = ver("$d");
 if (stripos($ver, 'Reward successfully made')) {
 		echo '['.$i.'/'.$jumlah.'] Sukses Verif';
+		    echo "\r\n";
+	}elseif (stripos($ver, 'disable MSIE')) {
+				echo '['.$i.'/'.$jumlah.'] Aku Yakin Sukses Verif '.$em.'';
 		    echo "\r\n";
 	}elseif(stripos($ver, 'Too Many Attempts.')) {
 					echo '['.$i.'/'.$jumlah.'] Gagal Verif [Too Many Attempts.]';
@@ -154,7 +157,10 @@ $shn = $ss+1;
 if (stripos($ver1, 'Reward successfully made')) {
 			echo '['.$i.'/'.$jumlah.'] Sukses Verif[2]';
 		    echo "\r\n";
-}else{
+}elseif (stripos($ver1, 'disable MSIE')) {
+				echo '['.$i.'/'.$jumlah.'] Aku Yakin Sukses Verif '.$em.'';
+		    echo "\r\n";
+	}else{
 								echo '['.$i.'/'.$jumlah.'] Gagal Verif Lagi Cek Manual di cdy.txt';
 				$data =  "".$link." \r\n";
 		$fh = fopen("cdy.txt", "a");

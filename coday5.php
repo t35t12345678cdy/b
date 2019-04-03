@@ -164,7 +164,7 @@ $shn = $ss+1;
 	$getver = get($link);
 $em = getStr($getver,'email=','
 Content-Secur');
-$cod = getStr($getver,'https://my.bigtoken.com/verify?code=','&type');
+$cod = getStr($getver,'verify?code=','&type');
 $d = '{"email":"'.$em.'","verification_code":"'.$cod.'"}';
 $ver = ver("$d");
 if (stripos($ver, 'Reward')) {

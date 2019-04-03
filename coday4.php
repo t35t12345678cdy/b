@@ -131,7 +131,7 @@ function getStr($content,$start,$end){
     }
     return '';
 }
-echo '@RiyanCoday - 2k19 v.4';		    echo "\r\n"; echo "========";echo "\r\n";
+echo '@RiyanCoday - 2k19';		    echo "\r\n"; echo "========";echo "\r\n";
 echo 'Kode Referral ? : '; 
 $ref = trim(fgets(STDIN)); 
 echo 'Mau Berapa ? : '; 
@@ -170,7 +170,7 @@ $shn = $ss+1;
 	$getver = get($link);
 $em = getStr($getver,'email=','
 Content-Secur');
-$cod = getStr($getver,'https://my.bigtoken.com/verify?code=','&type');
+$cod = getStr($getver,'verify?code=','&type');
 $d = '{"email":"'.$em.'","verification_code":"'.$cod.'"}';
 $ver = ver("$d");
 if (stripos($ver, 'Reward')) {

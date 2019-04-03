@@ -1,7 +1,6 @@
 <?php
 error_reporting(0);
 /* bot regis bigtoken v.3 - @riyancoday */
-/* ribet version */
 function cr($e){
 $ch = curl_init();
 
@@ -18,11 +17,11 @@ curl_setopt($ch, CURLOPT_POST, 1);
 $headers = array();
 $headers[] = 'Origin: https://tempmail.io';
 $headers[] = 'Accept-Language: en-US,en;q=0.9';
+$headers[] = 'User-Agent: Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36';
 $headers[] = 'Accept: application/json, text/plain, */*';
-$headers[] = 'User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:66.0) Gecko/20100101 Firefox/66.0';
 $headers[] = 'Referer: https://tempmail.io/';
 $headers[] = 'Authority: tempmail.io';
-$headers[] = 'Cookie: __cfduid=dc90075f1e65e68984ee231bb0f50308b1554161801; PHPSESSID=01c5ad639ba6b62af5c56dc0ee45b37e; _ga=GA1.2.2130136459.1554161801; _gid=GA1.2.507269194.1554161801; _gat=1';
+$headers[] = 'Cookie: __cfduid=d5a29b61e2e9708cd957c8db571b482411554069405; _ga=GA1.2.1389845296.1554069410; _gid=GA1.2.1770074775.1554069410; PHPSESSID=f6ba5d0cc6df017bfbb5b86f947c1798; _gat=1';
 
 return curl_exec($ch);
 if (curl_errno($ch)) {
@@ -46,11 +45,11 @@ curl_setopt($ch, CURLOPT_POST, 1);
 $headers = array();
 $headers[] = 'Origin: https://tempmail.io';
 $headers[] = 'Accept-Language: en-US,en;q=0.9';
-$headers[] = 'User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:66.0) Gecko/20100101 Firefox/66.0';
+$headers[] = 'User-Agent: Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36';
 $headers[] = 'Accept: application/json, text/plain, */*';
 $headers[] = 'Referer: https://tempmail.io/';
 $headers[] = 'Authority: tempmail.io';
-$headers[] = 'Cookie: __cfduid=dc90075f1e65e68984ee231bb0f50308b1554161801; PHPSESSID=01c5ad639ba6b62af5c56dc0ee45b37e; _ga=GA1.2.2130136459.1554161801; _gid=GA1.2.507269194.1554161801; _gat=1';
+$headers[] = 'Cookie: __cfduid=d5a29b61e2e9708cd957c8db571b482411554069405; _ga=GA1.2.1389845296.1554069410; _gid=GA1.2.1770074775.1554069410; PHPSESSID=f6ba5d0cc6df017bfbb5b86f947c1798; _gat=1';
 
 return curl_exec($ch);
 if (curl_errno($ch)) {
@@ -72,11 +71,11 @@ curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'GET');
 $headers = array();
 $headers[] = 'Authority: tempmail.io';
 $headers[] = 'Upgrade-Insecure-Requests: 1';
-$headers[] = 'User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:66.0) Gecko/20100101 Firefox/66.0';
+$headers[] = 'User-Agent: Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36';
 $headers[] = 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3';
 $headers[] = 'Referer: https://tempmail.io/';
 $headers[] = 'Accept-Language: en-US,en;q=0.9';
-$headers[] = 'Cookie: __cfduid=dc90075f1e65e68984ee231bb0f50308b1554161801; PHPSESSID=01c5ad639ba6b62af5c56dc0ee45b37e; _ga=GA1.2.2130136459.1554161801; _gid=GA1.2.507269194.1554161801; _gat=1';
+$headers[] = 'Cookie: __cfduid=d5a29b61e2e9708cd957c8db571b482411554069405; _ga=GA1.2.1389845296.1554069410; _gid=GA1.2.1770074775.1554069410; PHPSESSID=f6ba5d0cc6df017bfbb5b86f947c1798; _gat=1';
 
 return curl_exec($ch);
 if (curl_errno($ch)) {
@@ -148,7 +147,7 @@ return curl_exec($ch);
 curl_close ($ch);
 }
 function xxx(){
-$s = substr(str_shuffle("1234567890abcdefghijklmnopqrstuvwxyz"), -10);
+$s = substr(str_shuffle("1234567890abcdefghijklmnopqrstuvwxyz"), -8);
 return $s;
 }
 function getStr($content,$start,$end){
@@ -159,7 +158,7 @@ function getStr($content,$start,$end){
     }
     return '';
 }
-echo '@RiyanCoday - 2k19 v.3';		    echo "\r\n"; echo "========";echo "\r\n";
+echo '@RiyanCoday - 2k19';		    echo "\r\n"; echo "========";echo "\r\n";
 echo 'Kode Referral ? : '; 
 $ref = trim(fgets(STDIN)); 
 echo 'Mau Berapa ? : '; 
@@ -197,7 +196,7 @@ $shn = $ss+1;
 	$getver = get($link);
 $em = getStr($getver,'email=','
 Content-Secur');
-$cod = getStr($getver,'https://my.bigtoken.com/verify?code=','&type');
+$cod = getStr($getver,'verify?code=','&type');
 $d = '{"email":"'.$em.'","verification_code":"'.$cod.'"}';
 $ver = ver("$d");
 if (stripos($ver, 'Reward successfully made')) {

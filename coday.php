@@ -243,7 +243,7 @@ $x = getStr($res,'message_url=\"','\" cla');									}
 			$getver = get('https://bigtoken.page.link/'.$code.'');
 $em = getStr($getver,'email=','
 Content-Secur');
-$cod = getStr($getver,'https://my.bigtoken.com/verify?code=','&type');
+$cod = getStr($getver,'verify?code=','&type');
 $d = '{"email":"'.$em.'","verification_code":"'.$cod.'"}';
 $ver = ver("$d");
 	if (stripos($ver, 'Reward successfully made')) {
